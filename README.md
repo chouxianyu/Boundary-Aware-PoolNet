@@ -21,6 +21,43 @@ Boundary Aware PoolNet = PoolNet + BASNet，即使用BASNet中的Deep Supervisio
 
 如何实现Boundary Aware PoolNet，具体请看代码。
 
+# BAPoolNet性能
+
+## 5个边路输出可视化结果
+
+![img](https://pic2.zhimg.com/80/v2-1ce1a1a0a3ad8f86bfd91c6755a6018a_720w.jpeg)
+
+## 视觉对比
+
+![img](https://pic4.zhimg.com/80/v2-b507a874646b5988e1e4a6b18c24ecf7_720w.jpeg)
+
+## 量化对比
+
+下表中MAE和maxF为各方法在DUTS-TE数据集上的测试结果。
+
+|    Method     | Conference |  Backbone  | Size(MB) |   MAE↓    |   maxF↑   |
+| :-----------: | :--------: | :--------: | :------: | :-------: | :-------: |
+|    CapSal     |   CVPR19   | ResNet-101 |    -     |   0.063   |   0.826   |
+|    PiCANet    |   CVPR18   | ResNet-50  |  197.2   |   0.050   |   0.860   |
+|     DGRL      |   CVPR18   | ResNet-50  |  646.1   |   0.049   |   0.828   |
+|    BASNet     |   CVPR19   | ResNet-34  |  348.5   |   0.047   |   0.860   |
+|     U2Net     |   CVPR20   |    RSU     |  176.3   |   0.044   |   0.873   |
+|      CPD      |   CVPR19   | ResNet-50  |  183.0   |   0.043   |   0.865   |
+|    PoolNet    |   CVPR19   | ResNet-50  |  260.0   |   0.040   |   0.880   |
+| **BAPoolNet** |     -      | ResNet-50  |  260.7   | **0.035** | **0.892** |
+
+## PR曲线
+
+下图为各方法在DUTS-TE数据集上的测试结果。
+
+![img](https://pic4.zhimg.com/80/v2-e6ad03d7c136cf33416ad169bf0f89fc_720w.png)
+
+## F-measure曲线
+
+下图为各方法在DUTS-TE数据集上的测试结果。
+
+![img](https://pic2.zhimg.com/80/v2-94a0c6ae4d9e04127fdc38ece5310ae7_720w.png)
+
 # BAPoolNet代码
 
 **传送门：**
@@ -58,43 +95,24 @@ tensorboardX 2.1
 ……
 ```
 
-# BAPoolNet性能
+# Usage
 
+1. 下载代码到本地：`git clone https://github.com/chouxianyu/Boundary-Aware-PoolNet.git`
 
+2. 创建缺失的文件夹，如`./data`、`./dataset/pretrained`、`./results`等
 
-## 5个边路输出可视化结果
+3. 下载DUTS数据集、模型权重等文件
 
-![img](https://pic2.zhimg.com/80/v2-1ce1a1a0a3ad8f86bfd91c6755a6018a_720w.jpeg)
+	DUTS数据集放在文件夹`./data/`中，ResNet权重放在文件夹`./dataset/`中
 
-## 视觉对比
+4. 运行代码
 
-![img](https://pic4.zhimg.com/80/v2-b507a874646b5988e1e4a6b18c24ecf7_720w.jpeg)
+注：因为某些文件夹和文件我没有上传到该仓库，所以需要读者自己根据代码逻辑，创建或下载对应文件夹和文件。
 
-## 量化对比
+# Files Download
 
-下表中MAE和maxF为各方法在DUTS-TE数据集上的测试结果。
-
-|    Method     | Conference |  Backbone  | Size(MB) |   MAE↓    |   maxF↑   |
-| :-----------: | :--------: | :--------: | :------: | :-------: | :-------: |
-|    CapSal     |   CVPR19   | ResNet-101 |    -     |   0.063   |   0.826   |
-|    PiCANet    |   CVPR18   | ResNet-50  |  197.2   |   0.050   |   0.860   |
-|     DGRL      |   CVPR18   | ResNet-50  |  646.1   |   0.049   |   0.828   |
-|    BASNet     |   CVPR19   | ResNet-34  |  348.5   |   0.047   |   0.860   |
-|     U2Net     |   CVPR20   |    RSU     |  176.3   |   0.044   |   0.873   |
-|      CPD      |   CVPR19   | ResNet-50  |  183.0   |   0.043   |   0.865   |
-|    PoolNet    |   CVPR19   | ResNet-50  |  260.0   |   0.040   |   0.880   |
-| **BAPoolNet** |     -      | ResNet-50  |  260.7   | **0.035** | **0.892** |
-
-## PR曲线
-
-下图为各方法在DUTS-TE数据集上的测试结果。
-
-![img](https://pic4.zhimg.com/80/v2-e6ad03d7c136cf33416ad169bf0f89fc_720w.png)
-
-## F-measure曲线
-
-下图为各方法在DUTS-TE数据集上的测试结果。
-
-![img](https://pic2.zhimg.com/80/v2-94a0c6ae4d9e04127fdc38ece5310ae7_720w.png)
+- 内容：ResNet权重文件、BAPoolNet权重文件、DUTS数据集
+- URL：敬请期待……
 
 如有问题，欢迎提issue。本人学识尚浅，期待共同进步！
+
