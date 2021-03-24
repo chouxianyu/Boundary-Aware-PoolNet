@@ -6,6 +6,16 @@ Boundary Aware PoolNet = PoolNet + BASNet，即使用BASNet中的Deep Supervisio
 
 经过评估，BAPoolNet的性能超过了之前的SOTA方法（注：在DUTS-TE数据集上进行测试，暂未在其它数据集上进行测试）。
 
+**相关文章汇总：**
+
+- [Boundary Aware PoolNet：基于PoolNet和BASNet的显著性目标检测](https://zhuanlan.zhihu.com/p/359698101)
+
+- [Boundary Aware PoolNet(1)：PoolNet模型与代码介绍](https://zhuanlan.zhihu.com/p/359698301)
+
+- [Boundary Aware PoolNet(2)：BASNet模型与代码介绍](https://zhuanlan.zhihu.com/p/359698320)
+
+- [Boundary Aware PoolNet(3)：Boundary Aware PoolNet模型与代码介绍](https://zhuanlan.zhihu.com/p/359698332)
+
 # BAPoolNet结构
 
 在PoolNet中Backbone是ResNet50时，模型自顶向下路径中有5个FUSE操作，我借鉴BASNet中的Deep Supervision和Hybrid Loss使用这5层输出的混合Loss之和进行梯度下降，我将这整个模型称为**BAPoolNet(Boundary Aware PoolNet)**，其结构如下图所示。
