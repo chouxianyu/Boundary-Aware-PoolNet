@@ -56,8 +56,8 @@ def main():
             pred = np.squeeze(preds[4].cpu().data.numpy())
             pred = 255 * pred
             cv2.imwrite(os.path.join(output_dir_path,img_name[:-4] + '_' + 'inference' + '.png'), pred)
-        img = cv2.imread(os.path.join(img_dir_path, img_name))
         if show_every:
+            img = cv2.imread(os.path.join(img_dir_path, img_name))
             show(img_name[:-4], img, pred)
         print(i, 'Inferenced', img_name)
 
