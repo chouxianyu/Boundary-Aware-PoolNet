@@ -121,8 +121,9 @@ tensorboardX 2.1
 
 # Files Download
 
-- 内容：ResNet权重文件、BAPoolNet权重文件、DUTS数据集
-- URL：敬请期待……
+- 文件内容：ResNet权重文件、BAPoolNet权重文件、DUTS数据集、各个方法对DUTS-TE的预测结果、在DUTS-TE评估各个方法的结果
+- 百度网盘：https://pan.baidu.com/s/1m5PJ6A-tTnWveiFNIgxCBQ
+- 提取码：ikuy
 
-如有问题，欢迎提issue。本人学识尚浅，期待共同进步！
+# 欢迎follow和提issue，本人学识尚浅，期待共同进步！
 
